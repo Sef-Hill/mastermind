@@ -3,36 +3,55 @@ require_relative 'console'
 class Mastermind
     include Console
 
-    #CONSTANTS: the 6 colours
+    #COLOURS: the 6 colours
 
     def initialize
-        #?
+        display_welcome_screen
     end
 
-    def set_puzzle
-        #computer randomly chooses 4 colours out of the 6 CONSTANTS
+    def set_solution
+        #computer randomly chooses 4 colours out of the 6 COLOURS
         #- are repeat colours allowed?
         #the 4 colours are assigned to the 4 positions
-        #- local variable, type array
+        #- @solution, type array
     end
 
     def play
-        set_puzzle
+        keep_playing = true
 
-        #loop
-            #get_user_guess
-            #if correct
-                #user wins
-                #run win script
-                #return
-            #elsif 12th go
-                #user loses
-                #run lose script
-                #return
-            #else
-                #give_feedback
-            #end
-        #end 
+        until keep_playing == false
+            set_solution
+            current_turn = 1
+    
+            loop do
+                user_guess = get_user_guess
+                if guess_correct?(user_guess)
+                    user_wins(current_turn)
+                    break
+                elsif current_turn == 12
+                    user_loses
+                    break
+                else
+                    give_feedback(user_guess)
+                    @current_turn += 1
+                end
+            end
+            
+            #at end of game
+            keep_playing = get_user_plays_again?
+        end
+    end
 
+    def guess_correct?(user_guess)
+    end
+
+    def give_feedback(user_guess)
+    end
+
+    def user_wins(turns_taken)
+        #display how many turns they took
+    end
+
+    def user_loses
     end
 end
