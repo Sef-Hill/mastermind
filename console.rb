@@ -1,18 +1,42 @@
 module Console
 
     def display_welcome_screen
+        puts "MASTERMIND!"
+        puts "Can you crack the code in 12 attempts?\n"
     end
 
     def get_user_guess
         #returns the 4 choices
+        puts "\nEnter your guess:"
+        gets
     end
 
     def display_feedback(feedback)
+    end
+
+    def display_user_wins
+        puts "Congrats - YOU WIN!"
+    end
+
+    def display_user_loses
+        puts "Oh no ... time up. You lose."
     end
 
     def display_solution(solution)
     end
 
     def get_user_plays_again?
+        valid_input = false
+        user_input = ""
+        until valid_input
+            puts "\nPlay again? (y/n):"
+            user_input = gets.chomp.downcase
+            if user_input == "n" || user_input == "y"
+                valid_input = true
+            else
+                puts "\nPlease enter 'y' or 'n'"
+            end
+        end
+        user_input == "y"
     end
 end

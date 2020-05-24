@@ -1,4 +1,5 @@
 require_relative 'console'
+#require 'pry'
 
 class Mastermind
     include Console
@@ -25,6 +26,7 @@ class Mastermind
     
             loop do
                 user_guess = get_user_guess
+                #binding.pry
                 if guess_correct?(user_guess)
                     user_wins(current_turn)
                     break
@@ -43,6 +45,7 @@ class Mastermind
     end
 
     def guess_correct?(user_guess)
+        return true
     end
 
     def give_feedback(user_guess)
@@ -50,8 +53,10 @@ class Mastermind
 
     def user_wins(turns_taken)
         #display how many turns they took
+        display_user_wins
     end
 
     def user_loses
+        display_user_loses
     end
 end
