@@ -26,41 +26,31 @@ class Mastermind
 
         until keep_playing == false
             set_solution
-            current_turn = 1
+            current_turn = 0
     
             loop do
-                user_guess = get_user_guess
-                #binding.pry
+                current_turn += 1
+                user_guess = get_user_guess(current_turn)
                 if guess_correct?(user_guess)
-                    user_wins(current_turn)
+                    display_user_wins
                     break
                 elsif current_turn == 12
-                    user_loses
+                    display_user_loses
                     break
                 else
                     give_feedback(user_guess)
-                    @current_turn += 1
                 end
             end
-            
-            #at end of game
             keep_playing = get_user_plays_again?
         end
     end
 
     def guess_correct?(user_guess)
+        #compare user_guess to @solution
         return true
     end
 
     def give_feedback(user_guess)
-    end
-
-    def user_wins(turns_taken)
-        #display how many turns they took
-        display_user_wins
-    end
-
-    def user_loses
-        display_user_loses
+        #
     end
 end

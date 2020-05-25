@@ -7,9 +7,9 @@ module Console
         # show colours as: numbers 1-6 with coloured backgrounds
     end
 
-    def get_user_guess
-        #returns the 4 choices
-        puts "\nEnter your guess:"
+    def get_user_guess(current_turn)
+        #needs to be a 4 digit number
+        puts "\nTurn no: #{current_turn}\nEnter your guess ..."
         gets
     end
 
@@ -31,7 +31,7 @@ module Console
         valid_input = false
         user_input = ""
         until valid_input
-            puts "\nPlay again? (y/n):"
+            puts "\nPlay again? (y/n) ..."
             user_input = gets.chomp.downcase
             if user_input == "n" || user_input == "y"
                 valid_input = true
