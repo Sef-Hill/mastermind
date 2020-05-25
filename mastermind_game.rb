@@ -1,20 +1,24 @@
 require_relative 'console'
-#require 'pry'
+require 'pry'
 
 class Mastermind
     include Console
 
-    #COLOURS: the 6 colours
+    COLOURS = {
+        1 => "blue", 2 => "red", 3 => "green",
+        4 => "orange", 5 => "yellow", 6 => "purple"
+    }
 
     def initialize
         display_welcome_screen
+        @solution = []
     end
 
     def set_solution
-        #computer randomly chooses 4 colours out of the 6 COLOURS
-        #- are repeat colours allowed?
-        #the 4 colours are assigned to the 4 positions
-        #- @solution, type array
+        max = COLOURS.size
+        4.times do
+            @solution.push(rand(1..max))
+        end        
     end
 
     def play
