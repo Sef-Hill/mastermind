@@ -3,6 +3,8 @@ module Console
     def display_welcome_screen
         puts "MASTERMIND!"
         puts "Can you crack the code in 12 attempts?\n"
+        # display instructions
+        # show colours as: numbers 1-6 with coloured backgrounds
     end
 
     def get_user_guess
