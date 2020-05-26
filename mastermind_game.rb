@@ -4,20 +4,14 @@ require 'pry'
 class Mastermind
     include Console
 
-    COLOURS = {
-        1 => "blue", 2 => "red", 3 => "green",
-        4 => "orange", 5 => "yellow", 6 => "purple"
-    }
-
     def initialize
         display_welcome_screen
         @solution = []
     end
 
     def set_solution
-        max = COLOURS.size
         4.times do
-            @solution.push(rand(1..max))
+            @solution.push(rand(1..6))
         end        
     end
 

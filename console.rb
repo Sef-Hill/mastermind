@@ -1,12 +1,26 @@
+require_relative 'coloured_text'
+#require 'pry'
+
 module Console
+    include NumbersToColours
 
     def display_welcome_screen
-        puts "MASTERMIND!"
+        puts "\nMASTERMIND!"
         puts "Can you crack the code in 12 attempts?"
         # display instructions
         # show colours as: numbers 1-6 with coloured backgrounds
+        puts "\nYour choice of colours (and their numbers) is:"
         
-        print "Press Enter/Return to start ..."
+        #display_coloured_pegs([1, 2, 3, 4, 5, 6])
+        for i in 1..6
+            print number_to_colour(i) + " "
+        end
+        puts ""
+        for i in 1..6
+            print "  #{i}   "
+        end
+
+        print "\nPress Enter/Return to start ..."
         gets
         display_generating_solution(1.5)
     end
@@ -14,7 +28,7 @@ module Console
     def display_generating_solution(seconds,fps=10)
         chars = %w[| / - \\]
         delay = 1.0/fps
-        print "\nGenerating solution ... "
+        print "\nGenerating solution: "
         (seconds*fps).round.times{ |i|
             print chars[i % chars.length]
             sleep delay
@@ -24,16 +38,23 @@ module Console
     end
 
     def get_user_guess(current_turn)
+        #show all available colours
+        #show all previous turns and their feedback
+
         puts "\nTurn no: #{current_turn}\nEnter your guess as 4 digits ..."
         user_guess = gets
         #need to validate - should be 4 digit number using nos. 1 - 6
-        display_guess_as_colours(user_guess)
+        #convert to array
+
+        #for each number, display peg
     end
 
-    def display_guess_as_colours(user_guess)
+    def display_coloured_peg(peg_number)
+        print number_to_peg(peg_number)
     end
 
     def display_feedback(feedback)
+        # in the form of [••••], green for yes, something else for almost?
     end
 
     def display_user_wins
