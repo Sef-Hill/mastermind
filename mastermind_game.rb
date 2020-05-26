@@ -17,7 +17,6 @@ class Mastermind
 
     def play
         keep_playing = true
-
         until keep_playing == false
             set_solution
             current_turn = 0
@@ -25,6 +24,8 @@ class Mastermind
             loop do
                 current_turn += 1
                 user_guess = get_user_guess(current_turn)
+                display_numbers_as_colours(user_guess)
+                #show all previous turns and their feedback?
                 if guess_correct?(user_guess)
                     display_user_wins
                     break
@@ -41,10 +42,11 @@ class Mastermind
 
     def guess_correct?(user_guess)
         #compare user_guess to @solution
-        return true
+        return false
     end
 
     def give_feedback(user_guess)
-        #
+        #put in a delay here
+        puts "[••••]"
     end
 end
