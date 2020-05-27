@@ -10,11 +10,15 @@ module Console
         puts "\nMASTERMIND!"
         puts "Can you crack the code in 12 attempts?"
         # display instructions
-        puts "Here are your colours and their numbers:"
-        display_numbers_as_colours([1,2,3,4,5,6])
-        puts ""
+        
         print "\nPress Enter/Return to start ..."
         gets 
+    end
+
+    def display_all_numbers_and_colours
+        puts "\nHere are your colours and their numbers:"
+        display_numbers_as_colours([1,2,3,4,5,6])
+        puts ""
     end
 
     def display_numbers_as_colours(numbers)
@@ -24,7 +28,7 @@ module Console
     end
 
     def get_user_guess(current_turn)
-
+        display_all_numbers_and_colours if current_turn == 1
         puts "\nTurn no: #{current_turn}"
         print "Enter your guess ... "
         user_guess = get_valid_user_guess
@@ -55,7 +59,7 @@ module Console
 
     def display_user_loses(solution)
         puts "\n\nOh no ... time up. You lose."
-        sleep 2
+        sleep 1.5
         puts "\nCode was:"
         display_numbers_as_colours(solution)
         puts "\n"
