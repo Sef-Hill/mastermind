@@ -20,6 +20,7 @@ class Mastermind
         until keep_playing == false
             #game begins
             set_solution
+            binding.pry
             current_turn = 0
     
             loop do
@@ -27,7 +28,7 @@ class Mastermind
                 user_guess = get_user_guess(current_turn)
                 display_numbers_as_colours(user_guess)
                 #show all previous turns and their feedback?
-                if guess_correct?(user_guess)
+                if user_guess == @solution
                     display_user_wins
                     break
                 elsif current_turn == 12
@@ -40,11 +41,6 @@ class Mastermind
             end
             keep_playing = get_user_plays_again?
         end
-    end
-
-    def guess_correct?(user_guess)
-        #compare user_guess to @solution
-        return false
     end
 
     def get_feedback(user_guess)
