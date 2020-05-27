@@ -50,7 +50,7 @@ module Console
     end
 
     def display_user_wins
-        puts "Congrats - YOU WIN!"
+        puts "\n\nCongrats - YOU WIN!"
     end
 
     def display_user_loses
