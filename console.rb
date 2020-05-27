@@ -1,15 +1,16 @@
 require_relative 'coloured_text'
 require_relative 'validation_helper'
+require_relative 'instructions'
 
 module Console
     include NumbersToColours
     include ValidationHelper
+    include Instructions
 
     def display_welcome_screen
         puts "\nMASTERMIND!"
         puts "Can you crack the code in 12 attempts?"
-        # display instructions
-        
+        display_instructions
         print "\nPress Enter/Return to start ..."
         gets 
     end
@@ -29,7 +30,7 @@ module Console
     def get_user_guess(current_turn)
         display_all_numbers_and_colours if current_turn == 1
         puts "\nTurn no: #{current_turn}"
-        print "Enter your guess ... "
+        print "Enter your guess as 4 digits ... "
         user_guess = get_valid_user_guess
         user_str_arr = user_guess.split("")
         user_str_arr.map { |c| c = c.to_i}
