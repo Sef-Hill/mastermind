@@ -14,6 +14,7 @@ class Mastermind
         4.times do
             @solution.push(rand(1..6))
         end
+        binding.pry
     end
 
     def play
@@ -27,15 +28,13 @@ class Mastermind
                 current_turn += 1
                 user_guess = get_user_guess(current_turn)
                 display_numbers_as_colours(user_guess)
+                give_feedback(user_guess)
                 if user_guess == @solution
-                    give_feedback(user_guess)
                     display_user_wins
                     break
                 elsif current_turn == 12
                     display_user_loses(@solution)
                     break
-                else
-                    give_feedback(user_guess)
                 end
             end
             keep_playing = get_user_plays_again?
@@ -50,6 +49,7 @@ class Mastermind
     def get_feedback(user_guess)
         #exact matches
         solution_copy = @solution.clone
+        user_guess_copy = user_guess.clone
         feedback = {}
         indices = []
         exact_matches = 0
@@ -67,11 +67,11 @@ class Mastermind
         indices.reverse!
         indices.each do |i|
             solution_copy.delete_at(i)
-            user_guess.delete_at(i)
+            user_guess_copy.delete_at(i)
         end
         #count close matches
         close_matches = 0
-        user_guess.each do |number|
+        user_guess_copy.each do |number|
             if solution_copy.include?(number)
                 #delete 'number' from solution_copy
                 solution_copy.delete_at(solution_copy.index(number))
