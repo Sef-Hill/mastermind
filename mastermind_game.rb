@@ -10,6 +10,7 @@ class Mastermind
     end
 
     def set_solution
+        @solution.clear
         4.times do
             @solution.push(rand(1..6))
         end        
