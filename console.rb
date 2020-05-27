@@ -38,22 +38,30 @@ module Console
 
     def display_feedback(feedback)        
         feedback_string = ""
+        token_count = feedback[:close] + feedback[:exact]
         feedback[:exact].times { feedback_string += feedback_exact + " " }
         feedback[:close].times { feedback_string += feedback_close + " " }
         feedback_string = feedback_string.strip
-        delay = 0.025
-        print "   ["
-        feedback_string.each_char do |c|
-            sleep delay
-            print c
-        end
+        delay = 0.4
         sleep delay
+        print "   ["
+        if feedback_string == ""
+            sleep delay
+            print "no matches"
+        else
+            feedback_string.each_char do |c|
+                sleep delay * token_count / feedback_string.length
+                print c
+            end
+        end
+        #sleep delay
         print "]"
+        sleep delay
         puts ""
     end
 
     def display_user_wins  
-        puts "\n\nCongrats - YOU WIN!"
+        puts "\nCongrats - YOU WIN!"
         puts ""
     end
 
