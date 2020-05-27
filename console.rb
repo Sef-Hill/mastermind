@@ -36,9 +36,7 @@ module Console
         # in the form of [••••], green for yes, something else for almost?
         # put in a delay to add tension!
         delay = 0.3
-        sleep 1
-        print " = "
-        sleep delay
+        print "   "
         print "["
         sleep delay
         print "•"
