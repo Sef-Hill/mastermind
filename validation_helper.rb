@@ -18,7 +18,7 @@ module ValidationHelper
         valid_input = false
         user_input = ""
         until valid_input
-            user_input = gets.chomp
+            user_input = gets.chomp.gsub!(/\s+/, "")
             if user_input.size == 4
                 count_valid_digits = 0
                 user_input.each_char do |c|
