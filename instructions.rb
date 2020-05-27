@@ -10,8 +10,8 @@ module Instructions
         puts "in this game, the colours are represented by the numbers 1 to 6"
         puts "- after which they receive feedback from the codemaker on the accuracy of their choice."
         puts "\nThe feedback consists of 0 to 4 symbols:"
-        puts "• a solid dot represents a correct colour in the correct position;"
-        puts "• a hollow dot represents a correct colour, but in the wrong position."
+        puts "- a solid dot represents a correct colour in the correct position;"
+        puts "- a hollow dot represents a correct colour, but in the wrong position."
         puts "\nGood luck and get codebreaking!"
     end
 end
