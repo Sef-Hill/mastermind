@@ -41,7 +41,7 @@ module NumbersToColours
   end
 
   def feedback_close
-    "\e[#{FG_COLOURS["blue"]};1m◯\e[0m"
+    "\e[#{FG_COLOURS["red"]};1m◯\e[0m"
   end
 
 end
