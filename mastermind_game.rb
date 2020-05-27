@@ -14,7 +14,6 @@ class Mastermind
         4.times do
             @solution.push(rand(1..6))
         end
-        binding.pry
     end
 
     def play
