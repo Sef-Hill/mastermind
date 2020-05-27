@@ -36,24 +36,23 @@ module Console
         user_str_arr.map { |c| c = c.to_i}
     end
 
-    def display_feedback(feedback)
-        # in the form of [••••], green for yes, something else for almost?
-        # put in a delay to add tension!
-        delay = 0.3
-        print "   "
-        print "["
-        sleep delay
-        print "•"
-        sleep delay
-        print "•"
-        sleep delay
-        print "•"
+    def display_feedback(feedback)        
+        feedback_string = ""
+        feedback[:exact].times { feedback_string += feedback_exact + " " }
+        feedback[:close].times { feedback_string += feedback_close + " " }
+        feedback_string = feedback_string.strip
+        delay = 0.025
+        print "   ["
+        feedback_string.each_char do |c|
+            sleep delay
+            print c
+        end
         sleep delay
         print "]"
         puts ""
     end
 
-    def display_user_wins
+    def display_user_wins  
         puts "\n\nCongrats - YOU WIN!"
         puts ""
     end
