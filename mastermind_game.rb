@@ -1,5 +1,5 @@
 require_relative 'console'
-require 'pry'
+#require 'pry'
 
 class Mastermind
     include Console

@@ -1,6 +1,6 @@
 require_relative 'coloured_text'
 require_relative 'validation_helper'
-require 'pry'
+#require 'pry'
 
 module Console
     include NumbersToColours
