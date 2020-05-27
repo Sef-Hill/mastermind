@@ -1,7 +1,6 @@
 module NumbersToColours
   
   BG_COLOURS = {
-    "black" => 40,
     "red" => 41,
     "green" => 42,
     "yellow" => 43,
@@ -11,7 +10,6 @@ module NumbersToColours
   }
 
   FG_COLOURS = {
-    "black" => 30,
     "red" => 31,
     "green" => 32,
     "yellow" => 33,
@@ -43,5 +41,5 @@ module NumbersToColours
   def feedback_close
     "\e[#{FG_COLOURS["green"]};1m◯\e[0m"
   end
-
+  
 end
