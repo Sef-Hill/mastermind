@@ -67,7 +67,7 @@ module Console
 
     def display_user_loses(solution)
         puts "\n\nOh no ... time up. You lose."
-        sleep 1.5
+        sleep 1
         puts "\nCode was:"
         display_numbers_as_colours(solution)
         puts "\n"
