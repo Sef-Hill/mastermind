@@ -18,6 +18,7 @@ class Mastermind
     def play
         keep_playing = true
         until keep_playing == false
+            #game begins
             set_solution
             current_turn = 0
     
