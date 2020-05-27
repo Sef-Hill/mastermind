@@ -34,6 +34,21 @@ module Console
 
     def display_feedback(feedback)
         # in the form of [••••], green for yes, something else for almost?
+        # put in a delay to add tension!
+        delay = 0.3
+        sleep 1
+        print " = "
+        sleep delay
+        print "["
+        sleep delay
+        print "•"
+        sleep delay
+        print "•"
+        sleep delay
+        print "•"
+        sleep delay
+        print "]"
+        puts ""
     end
 
     def display_user_wins

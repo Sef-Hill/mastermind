@@ -33,7 +33,8 @@ class Mastermind
                     display_user_loses
                     break
                 else
-                    give_feedback(user_guess)
+                    feedback = get_feedback(user_guess)
+                    display_feedback(feedback)
                 end
             end
             keep_playing = get_user_plays_again?
@@ -45,8 +46,7 @@ class Mastermind
         return false
     end
 
-    def give_feedback(user_guess)
-        #put in a delay here
-        puts "[••••]"
+    def get_feedback(user_guess)
+        return {:exact => 1, :close => 2}
     end
 end
