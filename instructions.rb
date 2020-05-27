@@ -6,7 +6,7 @@ module Instructions
         puts "\nFrom the six colours available, the computer chooses a pattern of 4 colours,\nsome (or none) of which may be duplicates."
         puts "\ne.g. red, red, blue, green"
         puts "\nYou then have 12 attempts to guess the pattern, in both order and colour."
-        puts "Each turn commences with the you entering your chosen pattern -"
+        puts "Each turn commences with you entering your chosen pattern -"
         puts "in this game, the colours are represented by the numbers 1 to 6"
         puts "- after which you receive feedback from the computer on the accuracy of your choice."
         puts "\nThe feedback consists of 0 to 4 symbols:"
