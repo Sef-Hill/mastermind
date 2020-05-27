@@ -21,14 +21,12 @@ class Mastermind
         until keep_playing == false
             #game begins
             set_solution
-            binding.pry
             current_turn = 0
     
             loop do
                 current_turn += 1
                 user_guess = get_user_guess(current_turn)
                 display_numbers_as_colours(user_guess)
-                #show all previous turns and their feedback?
                 if user_guess == @solution
                     display_user_wins
                     break
