@@ -31,7 +31,7 @@ class Mastermind
                     display_user_wins
                     break
                 elsif current_turn == 12
-                    display_user_loses
+                    display_user_loses(@solution)
                     break
                 else
                     feedback = get_feedback(user_guess)

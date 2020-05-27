@@ -53,11 +53,12 @@ module Console
         puts "\n\nCongrats - YOU WIN!"
     end
 
-    def display_user_loses
-        puts "Oh no ... time up. You lose."
-    end
-
-    def display_solution(solution)
+    def display_user_loses(solution)
+        puts "\n\nOh no ... time up. You lose."
+        sleep 2
+        puts "\nCode was:"
+        display_numbers_as_colours(solution)
+        puts "\n"
     end
 
     def get_user_plays_again?
