@@ -16,7 +16,7 @@ module Console
     end
 
     def display_all_numbers_and_colours
-        puts "\nHere are your colours and their numbers:"
+        puts "\nHere are the colours and their numbers:"
         display_numbers_as_colours([1,2,3,4,5,6])
         puts ""
     end
@@ -38,7 +38,6 @@ module Console
 
     def display_feedback(feedback)        
         feedback_string = ""
-        token_count = feedback[:close] + feedback[:exact]
         feedback[:exact].times { feedback_string += "● " }
         feedback[:close].times { feedback_string += "◯ " }
         feedback_string = feedback_string.strip
@@ -67,7 +66,7 @@ module Console
 
     def display_user_loses(solution)
         puts "\n\nOh no ... time up. You lose."
-        sleep 1
+        sleep 0.4
         puts "\nCode was:"
         display_numbers_as_colours(solution)
         puts "\n"
