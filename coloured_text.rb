@@ -8,15 +8,6 @@ module NumbersToColours
     "magenta" => 45,
     "cyan" => 46
   }
-
-  FG_COLOURS = {
-    "red" => 31,
-    "green" => 32,
-    "yellow" => 33,
-    "blue" => 34,
-    "magenta" => 35,
-    "cyan" => 36
-  }
   
   def number_to_colour(number)
     case number
@@ -33,13 +24,4 @@ module NumbersToColours
   def coloured_block(colour)
     "\e[#{BG_COLOURS[colour]}m     \e[0m"
   end
-
-  def feedback_exact
-    "\e[#{FG_COLOURS["green"]};1m●\e[0m"
-  end
-
-  def feedback_close
-    "\e[#{FG_COLOURS["green"]};1m◯\e[0m"
-  end
-  
 end
