@@ -9,8 +9,8 @@ module Instructions
         puts "After entering each guess you will receive feedback on its accuracy."
         #puts " on the accuracy of your guess."
         puts "\nThe feedback consists of up to 4 dots (in no particular order):"
-        puts "- a solid dot (●) represents a correct colour in the correct position;"
-        puts "- a hollow dot (◯) represents a correct colour, but in the wrong position."
+        puts "- a solid dot (●) = correct colour in the correct position;"
+        puts "- a hollow dot (◯) = correct colour, but in the wrong position."
         puts "\nGood luck and get codebreaking!"
     end
 end
