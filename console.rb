@@ -50,12 +50,11 @@ module Console
         print "\n"
         buffer = feedback_string == "" ? 27 : 33
         buffer.times { print " "}
-        print "|"
         sleep delay
         if feedback_string == ""
-            print "no matches|"
+            print "|no matches|"
         else
-            print feedback_string[0] + " "
+            print "|" + feedback_string[0] + " "
             sleep delay
             print feedback_string[1] + "|\n"
             33.times { print " "}
