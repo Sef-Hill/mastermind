@@ -34,6 +34,7 @@ class Mastermind
                     display_user_loses(@solution)
                     break
                 end
+                display_horizontal_rule
             end
             keep_playing = get_user_plays_again?
         end

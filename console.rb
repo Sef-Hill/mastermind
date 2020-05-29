@@ -19,6 +19,7 @@ module Console
         puts "\nHere are the colours and their numbers:"
         display_numbers_as_colours([1,2,3,4,5,6])
         puts ""
+        display_horizontal_rule
     end
 
     def display_numbers_as_colours(numbers)
@@ -38,24 +39,37 @@ module Console
 
     def display_feedback(feedback)        
         feedback_string = ""
-        feedback[:exact].times { feedback_string += "● " }
-        feedback[:close].times { feedback_string += "◯ " }
-        feedback_string = feedback_string.strip
+        feedback[:exact].times { feedback_string += "●" }
+        feedback[:close].times { feedback_string += "◯" }
+        if feedback_string != ""
+            padding = 4 - feedback_string.size
+            padding.times { feedback_string += " "}
+        end
+
         delay = 0.4
+        print "\n"
+        buffer = feedback_string == "" ? 27 : 33
+        buffer.times { print " "}
+        print "|"
         sleep delay
-        print "   ["
         if feedback_string == ""
-            sleep delay
-            print "no matches"
+            print "no matches|"
         else
-            feedback_string.each_char do |c|
-                sleep delay
-                print c
-            end
+            print feedback_string[0] + " "
+            sleep delay
+            print feedback_string[1] + "|\n"
+            33.times { print " "}
+            sleep delay
+            print "|" + feedback_string[2] + " "
+            sleep delay
+            print feedback_string[3] + "|"
         end
         sleep delay
-        print "]"
-        sleep delay
+        puts ""
+    end
+
+    def display_horizontal_rule
+        39.times { print "_"}
         puts ""
     end
 
