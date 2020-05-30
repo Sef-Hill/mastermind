@@ -35,4 +35,19 @@ module ValidationHelper
         end
         user_input
     end
+
+    def get_valid_1_or_2_choice
+        valid_input = false
+        user_input = ""
+        until valid_input
+            user_input = gets.chomp
+            if user_input == "1" || user_input == "2"
+                valid_input = true
+            else
+                puts "That wasn't quite right -"
+                puts "Please enter 1 or 2 ..."
+            end
+        end
+        user_input
+    end
 end

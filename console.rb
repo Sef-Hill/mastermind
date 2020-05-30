@@ -7,12 +7,24 @@ module Console
     include ValidationHelper
     include Instructions
 
-    def display_welcome_screen
+    def display_welcome_screen_and_get_role
         puts "\nMASTERMIND!"
-        puts "Can you crack the code in 12 attempts?"
-        display_instructions
+        puts "Can you beat the computer in this codebreaking game?"
+        print "\nTo GUESS the code press 1 - to SET the code press 2 ..."
+        player_role = get_valid_1_or_2_choice
+        role = ""
+        if player_role == 1
+            role = "GUESSING"
+        else
+            role = "SETTING"
+        end
+        print "\nThank you. You will be #{role} the code."
+        print "\nTo dive straight in press 1 - to see instructions press 2 ..."
+        how_to_proceed = get_valid_1_or_2_choice
+        if how_to_proceed == 2 then display_instructions(player_role) end
         print "\nPress Enter/Return to start ..."
-        gets 
+        gets
+        player_role
     end
 
     def display_all_numbers_and_colours
