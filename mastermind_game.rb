@@ -4,7 +4,8 @@ class Mastermind
     include Console
 
     def initialize
-        @player_role = display_welcome_screen_and_get_role
+        display_welcome_screen
+        @player_role = get_player_role
         @keep_playing = true
         @solution = []
     end
@@ -20,7 +21,7 @@ class Mastermind
         until @keep_playing == false
             @player_role == 1 ? play_as_guesser : play_as_setter
             @keep_playing = get_user_plays_again?
-            #@player_role = ask user
+            @player_role = get_player_role
         end
     end
 

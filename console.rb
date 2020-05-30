@@ -7,9 +7,12 @@ module Console
     include ValidationHelper
     include Instructions
 
-    def display_welcome_screen_and_get_role
+    def display_welcome_screen
         puts "\nMASTERMIND!"
         puts "Can you beat the computer in this codebreaking game?"
+    end
+
+    def get_player_role
         print "\nTo GUESS the code press 1 - to SET the code press 2 ..."
         player_role = get_valid_1_or_2_choice
         role = ""
