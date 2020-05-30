@@ -5,6 +5,7 @@ class Mastermind
 
     def initialize
         @player_role = display_welcome_screen_and_get_role
+        @keep_playing = true
         @solution = []
     end
 
@@ -16,28 +17,34 @@ class Mastermind
     end
 
     def play
-        keep_playing = true
-        until keep_playing == false
-            #game begins
-            set_solution
-            current_turn = 0
-    
-            loop do
-                current_turn += 1
-                user_guess = get_user_guess(current_turn)
-                display_numbers_as_colours(user_guess)
-                give_feedback(user_guess)
-                if user_guess == @solution
-                    display_user_wins
-                    break
-                elsif current_turn == 12
-                    display_user_loses(@solution)
-                    break
-                end
-                display_horizontal_rule
-            end
-            keep_playing = get_user_plays_again?
+        until @keep_playing == false
+            @player_role == 1 ? play_as_guesser : play_as_setter
+            @keep_playing = get_user_plays_again?
+            #@player_role = ask user
         end
+    end
+
+    def play_as_guesser
+        set_solution
+        current_turn = 0
+        loop do
+            current_turn += 1
+            user_guess = get_user_guess(current_turn)
+            display_numbers_as_colours(user_guess)
+            give_feedback(user_guess)
+            if user_guess == @solution
+                display_user_wins
+                break
+            elsif current_turn == 12
+                display_user_loses(@solution)
+                break
+            end
+            display_horizontal_rule
+        end
+    end
+
+    def play_as_setter
+        puts "You're playing as the setter"
     end
 
     def give_feedback(user_guess)
