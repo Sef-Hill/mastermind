@@ -22,8 +22,6 @@ module Console
         print "\nTo dive straight in press 1 - to see instructions press 2 ..."
         how_to_proceed = get_valid_1_or_2_choice
         if how_to_proceed == 2 then display_instructions(player_role) end
-        print "\nPress Enter/Return to start ..."
-        gets
         player_role
     end
 

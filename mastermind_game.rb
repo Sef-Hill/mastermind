@@ -4,7 +4,6 @@ class Mastermind
     include Console
 
     def initialize
-        #display_welcome_screen
         @player_role = display_welcome_screen_and_get_role
         @solution = []
     end

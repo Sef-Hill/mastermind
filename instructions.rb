@@ -11,10 +11,14 @@ module Instructions
             puts "- a solid dot (●) = correct colour in the correct position;"
             puts "- a hollow dot (◯) = correct colour, but in the wrong position."
             puts "\nGood luck and get codebreaking!"
+            print "\nPress Enter/Return to start ..."
+        gets
         else
             #SET the code
             puts "\nInstructions for setting the code ..."
             puts "\nGood luck!"
+            print "\nPress Enter/Return to start ..."
+        gets
         end
     end
 end
