@@ -48,6 +48,6 @@ module ValidationHelper
                 puts "Please enter 1 or 2 ..."
             end
         end
-        user_input
+        user_input.to_i
     end
 end
