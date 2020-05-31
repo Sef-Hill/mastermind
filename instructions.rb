@@ -15,8 +15,16 @@ module Instructions
         gets
         else
             #SET the code
-            puts "\nInstructions for setting the code ..."
-            puts "\nGood luck!"
+            puts "\nIn this game you are the codemaker and the computer is the codebreaker."
+            puts "\nFrom six avilable colours, you choose a 4 colour pattern,\nsome (or none) of which may be duplicates."
+            puts "\ne.g. red, green, red, red"
+            puts "\nThe computer has 12 attempts to guess the pattern, in both order and colour."
+            puts "After each guess you will provide feedback on its accuracy."
+            puts "\nThe feedback will consist of up to 4 dots (given in no particular order):"
+            puts "- a solid dot (●) = correct colour in the correct position;"
+            puts "- a hollow dot (◯) = correct colour, but in the wrong position."
+
+            puts "\nGood luck beating the computer!"
             print "\nPress Enter/Return to start ..."
         gets
         end
