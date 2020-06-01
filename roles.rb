@@ -2,6 +2,7 @@ require_relative 'console'
 
 class Codebreaker
     include Console
+
     def do_solution(solution)
         solution.clear
         4.times do
@@ -50,31 +51,34 @@ class Codebreaker
     end
 
     def do_guesser_wins
-        display_user_wins
+        display_codebreaker_wins
     end
 
     def do_guesser_loses(solution)
-        display_user_loses
+        display_codebreaker_loses(solution)
     end
 end
 
 class Codemaker
-    def do_solution(solution)
+    include Console
 
+    def do_solution(solution)
+        #get user to set code
     end
 
     def do_guess(current_turn)
-
+        #computer makes a guess
     end
 
     def do_feedback(guess, solution)
-
+        #user gives feedback?
     end
 
     def do_guesser_wins
-
+        display_codemaker_wins
     end
 
     def do_guesser_loses(solution)
+        display_codemaker_loses
     end
 end

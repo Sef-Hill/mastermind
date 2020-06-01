@@ -85,17 +85,25 @@ module Console
         puts ""
     end
 
-    def display_user_wins  
+    def display_codebreaker_wins  
         puts "\nCongrats - YOU WIN!"
         puts ""
     end
 
-    def display_user_loses(solution)
+    def display_codebreaker_loses(solution)
         puts "\n\nOh no ... time up. You lose."
         sleep 0.4
         puts "\nCode was:"
         display_numbers_as_colours(solution)
         puts "\n"
+    end
+
+    def display_codemaker_wins
+        puts "\nTime up. Congrats - YOU WIN!"
+    end
+
+    def display_codemaker_loses
+        puts "\nOh no ... your code was guessed! You lose."
     end
 
     def get_user_plays_again?
