@@ -63,7 +63,7 @@ class Codemaker
     include Console
 
     def do_solution(solution)
-        #get user to set code
+        solution = get_user_solution
     end
 
     def do_guess(current_turn)

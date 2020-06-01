@@ -14,7 +14,7 @@ module ValidationHelper
         user_input
     end
 
-    def get_valid_user_guess
+    def get_valid_four_digits
         valid_input = false
         user_input = ""
         until valid_input

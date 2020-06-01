@@ -44,9 +44,19 @@ module Console
     def get_user_guess(current_turn)
         puts "\nTurn no: #{current_turn}"
         print "Enter your guess as 4 digits ... "
-        user_guess = get_valid_user_guess
-        user_str_arr = user_guess.split("")
-        user_str_arr.map { |c| c = c.to_i}
+        get_four_digits_arr
+    end
+
+    def get_user_solution
+        print "\nEnter your code as 4 digits ... "
+        get_four_digits_arr
+    end
+
+    def get_four_digits_arr
+        #this should be 'private'
+        string_of_digits = get_valid_four_digits
+        digits_str_arr = string_of_digits.split("")
+        digits_str_arr.map { |c| c = c.to_i}
     end
 
     def display_feedback(feedback)        
