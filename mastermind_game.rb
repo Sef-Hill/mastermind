@@ -18,6 +18,7 @@ class Mastermind
             current_turn = 0
             loop do
                 current_turn += 1
+                display_all_numbers_and_colours if current_turn == 1
                 guess = player.do_guess(current_turn)
                 display_numbers_as_colours(guess)
                 player.do_feedback(guess, @solution)

@@ -42,7 +42,6 @@ module Console
     end
 
     def get_user_guess(current_turn)
-        display_all_numbers_and_colours if current_turn == 1
         puts "\nTurn no: #{current_turn}"
         print "Enter your guess as 4 digits ... "
         user_guess = get_valid_user_guess
