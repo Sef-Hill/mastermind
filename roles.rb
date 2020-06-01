@@ -1,4 +1,5 @@
 require_relative 'console'
+require 'pry'
 
 class Codebreaker
     include Console
@@ -64,14 +65,18 @@ class Codemaker
 
     def do_solution(solution)
         solution = get_user_solution
+        display_numbers_as_colours(solution)
+        display_horizontal_rule
     end
 
     def do_guess(current_turn)
         #computer makes a guess
+        return [1, 1, 1, 1]
     end
 
     def do_feedback(guess, solution)
         #user gives feedback?
+        binding.pry
     end
 
     def do_guesser_wins
